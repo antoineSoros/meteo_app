@@ -5,6 +5,9 @@
 export const environment = {
   production: false
 };
+export const token ={
+  apiToken :"d7466ad9c84159"
+};
 
 /*
  * For easier debugging in development mode, you can import the following file
