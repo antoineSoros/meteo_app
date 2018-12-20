@@ -18,4 +18,6 @@ export class MeteoPollutionComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+  
 }

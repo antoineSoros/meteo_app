@@ -8,7 +8,9 @@ import { City } from '../shared/models/city.model';
 })
 export class MeteoComponent implements OnInit {
   @Input() city: City;
-  constructor() { }
+  constructor() { 
+ 
+  }
 
   ngOnInit() {
   }

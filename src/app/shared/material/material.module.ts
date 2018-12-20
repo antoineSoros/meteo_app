@@ -14,7 +14,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatToolbarModule,
     MatIconModule,
     MatSnackBarModule,
-    MatSidenavModule
+    MatSidenavModule,
+  
   ],
   exports: [
     MatButtonModule,

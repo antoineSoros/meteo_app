@@ -1,9 +1,35 @@
 <mat-toolbar color="primary" >
-  <button  mat-button (click)="expression" >
-    <mat-icon>menu</mat-icon>
-  </button>
+  <p><button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
+
   <mp-city [city]="city"></mp-city>
 </mat-toolbar>
-<mp-cities></mp-cities>
+<mat-sidenav-container  >
+    <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
+      <mp-cities></mp-cities>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      
+      <div><mp-meteo></mp-meteo></div>
+      <div><mp-pollution></mp-pollution></div>
+     
+     
+    </mat-sidenav-content>
+  </mat-sidenav-container>
 
 
+  <!-- <mat-sidenav-container class="example-container" *ngIf="shouldRun">
+      <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+                   (closed)="events.push('close!')">
+        Sidenav content
+      </mat-sidenav>
+    
+      <mat-sidenav-content>
+        <p><mat-checkbox [(ngModel)]="opened">sidenav.opened</mat-checkbox></p>
+        <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+        <p>Events:</p>
+        <div class="example-events">
+          <div *ngFor="let e of events">{{e}}</div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container> -->

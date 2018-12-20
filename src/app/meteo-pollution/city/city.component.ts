@@ -21,7 +21,7 @@ localizeMe : boolean = false;
   ngOnInit() { }
 
   findLocation() {
-    console.log(this.locationIQService);
+   
     
     navigator.geolocation.getCurrentPosition(
       (event: Position) => this.findCityName(event), (event: PositionError) => this.snackbar.open("VILLE INTROUVABLE!!!","Retry")
