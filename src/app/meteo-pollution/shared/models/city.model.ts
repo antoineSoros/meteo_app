@@ -1,6 +1,9 @@
+import {Address} from './address.model';
+
 export class City {
-   nom: string;
+
   position: Position;
+  address: Address;
 
 
 

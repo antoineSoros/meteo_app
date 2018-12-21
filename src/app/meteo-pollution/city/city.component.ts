@@ -33,14 +33,18 @@ export class CityComponent implements OnInit {
       },
       () => {
         return this.snackbar.open('VILLE INTROUVABLE!!!', 'Retry'
-        ).onAction().subscribe(() => this.findLocation);
+        ).onAction().subscribe(() => this.findLocation());
       });
 
   }
   findCityName(): Subscription {
     return this.locationIQService.get(this.city.position).subscribe(
-      (locationIq: LocationIQ) => {console.log(locationIq); },
-      (error: HttpErrorResponse) => {console.log(error); }
+      (locationIq: LocationIQ) => {
+        this.city.address = locationIq.address;
+
+      },
+      (error: HttpErrorResponse) => {this.snackbar.open('City Location Error', 'Retry'
+      ).onAction().subscribe(() => this.findCityName()); }
     );
 
 
