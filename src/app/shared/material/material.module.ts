@@ -7,6 +7,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 @NgModule({
   declarations: [],
@@ -19,6 +20,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSidenavModule,
     MatListModule,
     MatProgressBarModule,
+    FlexLayoutModule,
 
   ],
   exports: [
@@ -29,6 +31,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatSidenavModule,
     MatListModule,
     MatProgressBarModule,
+    FlexLayoutModule
   ]
 
 })

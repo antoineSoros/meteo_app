@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { City } from '../shared/models/city.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {City} from '../shared/models/city.model';
 
 @Component({
   selector: 'mp-meteo',
@@ -8,8 +8,8 @@ import { City } from '../shared/models/city.model';
 })
 export class MeteoComponent implements OnInit {
   @Input() city: City;
-  constructor() { 
- 
+  constructor() {
+
   }
 
   ngOnInit() {
