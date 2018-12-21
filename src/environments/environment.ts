@@ -5,8 +5,8 @@
 export const environment = {
   production: false
 };
-export const token ={
-  apiToken :"d7466ad9c84159"
+export const token = {
+  apiTokenLocationIq : 'd7466ad9c84159'
 };
 
 /*
