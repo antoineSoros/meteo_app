@@ -2,6 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import {City} from '../shared/models/city.model';
 import {LocationIqService} from '../shared/services/location-iq.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import {Subscription} from 'rxjs';
+import {LocationIQ} from '../shared/models/location-iq.models';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'mp-city',
@@ -12,7 +15,7 @@ export class CityComponent implements OnInit {
 
 
 @Input() city: City;
-localizeMe = false;
+
 
   constructor(private locationIQService: LocationIqService, private snackbar: MatSnackBar) {
     this.findLocation();
@@ -26,7 +29,7 @@ localizeMe = false;
     navigator.geolocation.getCurrentPosition(
       (event: Position) => {
         this.city.position = event ;
-      this.findCityName(event);
+      this.findCityName();
       },
       () => {
         return this.snackbar.open('VILLE INTROUVABLE!!!', 'Retry'
@@ -34,10 +37,12 @@ localizeMe = false;
       });
 
   }
-  findCityName(event: Position) {
-    this.localizeMe = true;
-    this.locationIQService.get(event).subscribe((reponse) => {
-      this.city.nom = reponse['address']['city']; }, );
+  findCityName(): Subscription {
+    return this.locationIQService.get(this.city.position).subscribe(
+      (locationIq: LocationIQ) => {console.log(locationIq); },
+      (error: HttpErrorResponse) => {console.log(error); }
+    );
+
 
   }
 }
