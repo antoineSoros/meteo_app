@@ -6,6 +6,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [],
@@ -17,6 +18,7 @@ import {MatListModule} from '@angular/material/list';
     MatSnackBarModule,
     MatSidenavModule,
     MatListModule,
+    MatProgressBarModule,
 
   ],
   exports: [
@@ -25,7 +27,8 @@ import {MatListModule} from '@angular/material/list';
     MatIconModule,
     MatSnackBarModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatProgressBarModule,
   ]
 
 })

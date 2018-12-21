@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {City} from '../shared/models/city.model';
 import {LocationIqService} from '../shared/services/location-iq.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -15,12 +15,11 @@ export class CityComponent implements OnInit {
 
 
 @Input() city: City;
-
+@Output() eventCity: EventEmitter<City>;
 
   constructor(private locationIQService: LocationIqService, private snackbar: MatSnackBar) {
     this.findLocation();
-
-
+   this.eventCity = new EventEmitter();
    }
 
   ngOnInit() { }
@@ -41,7 +40,7 @@ export class CityComponent implements OnInit {
     return this.locationIQService.get(this.city.position).subscribe(
       (locationIq: LocationIQ) => {
         this.city.address = locationIq.address;
-
+        this.eventCity.emit(this.city);
       },
       (error: HttpErrorResponse) => {this.snackbar.open('City Location Error', 'Retry'
       ).onAction().subscribe(() => this.findCityName()); }

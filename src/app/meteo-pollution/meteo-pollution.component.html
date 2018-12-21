@@ -1,15 +1,18 @@
-<mat-toolbar color="primary" >
-  <p><button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
 
-  <mp-city [city]="city"></mp-city>
-</mat-toolbar>
-<mat-sidenav-container  >
+<mat-sidenav-container fullscreen >
     <mat-sidenav #sidenav mode="side" [(opened)]="opened" >
       <mp-cities></mp-cities>
+
+
     </mat-sidenav>
     
     <mat-sidenav-content>
-      
+      <mat-toolbar color="primary" >
+        <p><button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button></p>
+
+        <mp-city (eventCity)="addCity($event)" [city]="city"></mp-city>
+
+      </mat-toolbar>
       <div><mp-meteo></mp-meteo></div>
       <mat-divider></mat-divider>
 
@@ -20,4 +23,3 @@
   </mat-sidenav-container>
 
 
- 

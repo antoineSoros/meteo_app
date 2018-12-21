@@ -15,6 +15,8 @@ export class MeteoPollutionComponent  {
 
   }
 
-
+addCity(city: City) {
+console.log('wait');
+}
 
 }
