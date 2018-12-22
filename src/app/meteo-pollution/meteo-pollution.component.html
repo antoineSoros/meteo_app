@@ -7,14 +7,14 @@
     </mat-sidenav>
     
     <mat-sidenav-content>
-      <div fxLayout="row" fxLayoutAlign="center center">
-      <mat-toolbar  color="primary" >
-        <p><button mat-icon-button (click)="sidenav.toggle()" fxFlex="50%"><mat-icon>menu</mat-icon></button></p>
 
-         <mp-city (eventCity)="addCity($event)" [city]="city" fxFlex></mp-city>
-
+      <mat-toolbar  fxLayout="row" fxLayoutAlign="space-around center"  color="primary"  >
+        <p><button mat-icon-button (click)="sidenav.toggle()" ><mat-icon>menu</mat-icon></button></p>
+        <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-around center" >
+         <mp-city (eventCity)="addCity($event)" [city]="city" ></mp-city>
+        </mat-toolbar-row>
       </mat-toolbar>
-      </div>
+
       <div><mp-meteo></mp-meteo></div>
       <mat-divider></mat-divider>
 
