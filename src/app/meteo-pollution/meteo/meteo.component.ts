@@ -1,5 +1,6 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {City} from '../shared/models/city.model';
+import {MeteoService} from '../shared/services/meteo.service';
 
 @Component({
   selector: 'mp-meteo',
@@ -8,7 +9,7 @@ import {City} from '../shared/models/city.model';
 })
 export class MeteoComponent implements OnInit, OnChanges {
   @Input() city: City;
-  constructor() {
+  constructor(private meteo: MeteoService) {
 
   }
 

@@ -6,7 +6,8 @@ export const environment = {
   production: false
 };
 export const token = {
-  apiTokenLocationIq : 'd7466ad9c84159'
+  apiTokenLocationIq : 'd7466ad9c84159',
+  apiOpenWeatherMap : 'cd4700a90ee8ab3abd3c7f0b6dd7e9bf',
 };
 
 /*
