@@ -11,7 +11,7 @@ export class MeteoPollutionComponent  {
  public city: City;
 
   constructor() {
-    this.city = new City();
+this.city = new City();
 
   }
 

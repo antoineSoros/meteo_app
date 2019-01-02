@@ -1,8 +1,10 @@
+import {Main} from './main.model';
+import {Wind} from './wind.model';
+import {Detail} from './detail.model';
+
+
 export class Meteo {
-  main: string;
-  description: string;
-  temp: string;
-  tempMax: string;
-  tempMin: string;
-  windSpeed: string;
+  main: Main ;
+  wind: Wind;
+  weather: Detail[];
 }

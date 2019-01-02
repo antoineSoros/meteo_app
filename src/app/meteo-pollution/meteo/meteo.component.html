@@ -1,1 +1,10 @@
-<h1>MÉTÉO</h1>
+<h1>MÉTÉO </h1>
+<img  src="http://openweathermap.org/img/w/{{city.weather.weather[0].icon}}.png">
+<ul>
+  <li>Temperature:{{city.weather.main.temp |number:'1.0-0'}}</li>
+  <li>Temperature Min :{{city.weather.main.temp_min}}</li>
+  <li>Temperature Max:{{city.weather.main.temp_max}}</li>
+  <li>{{city.weather.weather[0].main}}</li>
+
+  <li> wind speed: {{city.weather.wind.speed}}</li>
+</ul>
