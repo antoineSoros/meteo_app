@@ -1,10 +1,28 @@
-<h1>MÉTÉO </h1>
-<img  src="http://openweathermap.org/img/w/{{city.weather.weather[0].icon}}.png">
-<ul>
-  <li>Temperature:{{city.weather.main.temp |number:'1.0-0'}}</li>
-  <li>Temperature Min :{{city.weather.main.temp_min}}</li>
-  <li>Temperature Max:{{city.weather.main.temp_max}}</li>
-  <li>{{city.weather.weather[0].main}}</li>
 
-  <li> wind speed: {{city.weather.wind.speed}}</li>
-</ul>
+
+<mat-card fxLayout="column" fxLayoutAlign="start center" class="mat-elevation-z24">
+  <mat-card-header >
+  <mat-card-title >MÉTÉO</mat-card-title>
+  <mat-card-subtitle><img  src="http://openweathermap.org/img/w/{{city.weather.weather[0].icon}}.png"></mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+<mat-tab-group>
+  <mat-tab  label="description" fxlayoutAlign="center"><span class="value" >{{city.weather.weather[0].description}}</span></mat-tab>
+  <mat-tab label="Temperature">
+    <ul>
+      <li><span class="value">Temperature:</span> <span class="value" fxLayoutAlign="end ">{{city.weather.main.temp |number:'1.0-0'}} °C</span></li>
+      <mat-divider></mat-divider>
+      <li><span class="value">Temperature Min :</span> <span class="value" fxLayoutAlign="end ">{{city.weather.main.temp_min |number:'1.0-0'}} °C</span></li>
+      <mat-divider></mat-divider>
+      <li><span class="value">Temperature Max: </span><span class="value" fxLayoutAlign="end ">{{city.weather.main.temp_max |number:'1.0-0'}} °C</span></li>
+
+    </ul>
+
+  </mat-tab>
+  <mat-tab label="Wind">
+    <span  fxLayoutAlign="none " class="value"> wind speed:</span> <span class="value" fxLayoutAlign="end center">{{city.weather.wind.speed }} m/s</span></mat-tab>
+
+</mat-tab-group>
+  </mat-card-content>
+</mat-card>
