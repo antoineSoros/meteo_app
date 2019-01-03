@@ -10,6 +10,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -26,6 +28,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     FlexLayoutModule,
     MatCardModule,
     MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
 
 
   ],
@@ -39,7 +43,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     MatProgressBarModule,
     FlexLayoutModule,
     MatCardModule,
-    MatTabsModule
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ]
 
 })

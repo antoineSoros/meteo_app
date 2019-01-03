@@ -1,1 +1,3 @@
-export class Dew{}
+export class Dew {
+  v: number;
+}

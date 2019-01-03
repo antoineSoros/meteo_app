@@ -1,1 +1,4 @@
-export class Pm10{}
+export class Pm10 {
+  v: number;
+
+}

@@ -1,1 +1,4 @@
-export class No2{}
+export class No2 {
+  v: number;
+
+}

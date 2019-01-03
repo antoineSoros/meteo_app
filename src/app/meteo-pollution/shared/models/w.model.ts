@@ -1,1 +1,4 @@
-export class W{}
+export class W {
+  v: number;
+
+}

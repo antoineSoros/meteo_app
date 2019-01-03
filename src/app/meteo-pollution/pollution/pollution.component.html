@@ -1,1 +1,19 @@
-<h1>POLLUTION</h1>
+<mat-card fxLayout="column" fxLayoutAlign="start center" class="mat-elevation-z24">
+  <mat-card-header>
+    <mat-card-title><span class="title">POLLUTION</span></mat-card-title>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <ul>
+      <li><span class="value">NO2: </span> <span class="value">{{city.pollution.data.iaqi.no2.v}}</span></li>
+      <mat-divider></mat-divider>
+      <li><span class="value">DEW :</span> <span class="value">{{city.pollution.data.iaqi.dew.v}}</span></li>
+      <mat-divider></mat-divider>
+      <li><span class="value">PM10: </span><span class="value">{{city.pollution.data.iaqi.pm10.v}}</span></li>
+
+    </ul>
+
+
+  </mat-card-content>
+</mat-card>

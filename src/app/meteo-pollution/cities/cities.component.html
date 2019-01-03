@@ -1,14 +1,7 @@
-
-<mat-list role="list">
-  <mat-list-item role="listitem">LYON</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">PARIS</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">MARSEILLE</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">LILLE</mat-list-item>
-  <mat-divider></mat-divider>
-  <mat-list-item role="listitem">RENNES</mat-list-item>
-  <mat-divider></mat-divider>
-
-</mat-list>
+<form [formGroup]="cityForm" (ngSubmit)="inputCity.blur()">
+  <mat-form-field>
+    <input #inputCity (blur)="onSubmit($event)" matInput placeholder="Enter a city" formControlName="cityName">
+    <mat-error *ngIf="cityForm.get('cityName').errors && cityForm.get('cityName').errors.minlength ">Too Short</mat-error>
+    <mat-error *ngIf="cityForm.get('cityName').errors && cityForm.get('cityName').errors.maxlength">Too Long</mat-error>
+  </mat-form-field>
+</form>
