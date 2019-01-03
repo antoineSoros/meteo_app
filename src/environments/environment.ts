@@ -8,9 +8,7 @@ export const environment = {
 export const token = {
   apiTokenLocationIq : 'd7466ad9c84159',
   apiOpenWeatherMap : 'cd4700a90ee8ab3abd3c7f0b6dd7e9bf',
-};
-export const icon = {
-  urlIcon: 'http://openweathermap.org/img/w/'
+  apiPollution: '748468fa03282a0706344f7d67336e56994325fa',
 };
 
 /*

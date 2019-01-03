@@ -8,7 +8,7 @@
 
     <mat-sidenav-content>
 
-      <mat-toolbar  fxLayout="row" fxLayoutAlign="space-around center"  color="primary"  >
+      <mat-toolbar  fxLayout="row"   color="primary"  >
         <p><button mat-icon-button (click)="sidenav.toggle()" ><mat-icon>menu</mat-icon></button></p>
         <mat-toolbar-row fxLayoutAlign="space-around center" >
          <mp-city (eventCity)="addCity($event)" [city]="city" ></mp-city>
@@ -17,7 +17,7 @@
 
       </mat-toolbar>
 
-      <div fxLayout="row" fxLayoutAlign="space-around center" ><mp-meteo [city]="city.address ? city : null"></mp-meteo></div>
+      <div  fxLayout="row"   fxLayoutAlign="space-around center"  ><mp-meteo [city]="city.address ? city : null"></mp-meteo></div>
       <mat-divider></mat-divider>
 
       <div><mp-pollution [city]="city.address ? city : null"></mp-pollution></div>
