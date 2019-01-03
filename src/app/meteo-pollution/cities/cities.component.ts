@@ -39,6 +39,7 @@ export class CitiesComponent implements OnInit {
       city.address = new Address();
       city.address.county = cityName.value;
       this.citiesService.get().subscribe();
+      this.citiesService.post(city);
       cityName.setValue('');
     }
 

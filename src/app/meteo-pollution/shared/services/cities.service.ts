@@ -17,5 +17,12 @@ export class CitiesService {
 
   }
 
+  post(city: City): Observable<City[]> {
+    const foundCity = this.cities.find((current) => current.address.county === city.address.county);
+    if (!foundCity) {
+      this.cities.push(city);
+    }
+    return this.get();
+  }
 
 }
