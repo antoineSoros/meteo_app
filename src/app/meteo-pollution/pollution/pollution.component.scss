@@ -1,6 +1,6 @@
 mat-card {
   width: 500px;
-  height: 500px;
+  height:600px;
 
 }
 mat-card-header{
@@ -12,16 +12,23 @@ mat-card-header{
   font-weight: bolder;
   font-size: 2em;
 }
-.title{
+.title {
   font-size: 2em;
+}
 
-}
-mat-card-subtitle{
-  margin-left: 15%;
-}
 li{
-
+padding-top: 10%;
+  padding-bottom: 10%;
   list-style-type:none;
 }
+ul{
+  padding-top: 5%;
+
+}
 
 
+.indice-pollution{
+  padding:  5%;
+  border-radius: 12px;
+
+}

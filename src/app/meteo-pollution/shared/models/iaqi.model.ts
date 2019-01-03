@@ -1,11 +1,12 @@
 import {No2} from './no2.model';
 import {Pm10} from './pm10.model';
-import {W} from './w.model';
-import {Dew} from './dew.model';
+import {Wg} from './wg.model';
+
+import {H} from './h.model';
 
 export class Iaqi {
-  dew: Dew;
+  h: H;
   no2: No2;
   pm10: Pm10;
-  w: W;
+  wg: Wg;
 }

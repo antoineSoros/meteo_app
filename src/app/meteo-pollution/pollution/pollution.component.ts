@@ -20,7 +20,8 @@ export class PollutionComponent implements OnInit, OnChanges {
     this.pollution = new Pollution();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.findPollution();
@@ -28,13 +29,39 @@ export class PollutionComponent implements OnInit, OnChanges {
 
   findPollution(): Subscription {
     return this.pollutionService.get(this.city).subscribe((pollutionModel: Pollution) => {
-      this.city.pollution = pollutionModel;
-    },
+        this.city.pollution = pollutionModel;
+        if (this.city.pollution.data.aqi < 51) {
+          this.city.pollution.data.aqiDescription = 'BON';
+          this.city.pollution.data.aqiColor = '#009966';
+        }
+        if (this.city.pollution.data.aqi > 50 && this.city.pollution.data.aqi < 101) {
+          this.city.pollution.data.aqiDescription = 'MODÉRÉ';
+          this.city.pollution.data.aqiColor = '#FFDE33';
+        }
+        if (this.city.pollution.data.aqi > 100 && this.city.pollution.data.aqi < 151) {
+          this.city.pollution.data.aqiDescription = 'RISQUE POUR SANTÉ FRAGILE';
+          this.city.pollution.data.aqiColor = '#FF9933';
+        }
+        if (this.city.pollution.data.aqi > 150 && this.city.pollution.data.aqi < 201) {
+          this.city.pollution.data.aqiDescription = 'RISQUE POUR LA SANTÉ ';
+          this.city.pollution.data.aqiColor = '#CC0033';
+        }
+
+        if (this.city.pollution.data.aqi > 200 && this.city.pollution.data.aqi < 301) {
+          this.city.pollution.data.aqiDescription = ' DANGEREUX POUR LA SANTÉ ';
+          this.city.pollution.data.aqiColor = '#660099';
+
+        }
+        if (this.city.pollution.data.aqi > 300) {
+          this.city.pollution.data.aqiDescription = 'DANGEREUX POUR LA SANTÉ';
+          this.city.pollution.data.aqiColor = '#7E0023';
+        }
+      },
       (error: HttpErrorResponse) => {
         this.snackbar.open(' can\'t load pollution', 'OOPS', {duration: 3000}
         );
       }
-  )
-    ;
+    )
+      ;
   }
 }

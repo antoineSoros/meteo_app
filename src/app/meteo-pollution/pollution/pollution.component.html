@@ -3,14 +3,21 @@
     <mat-card-title><span class="title">POLLUTION</span></mat-card-title>
 
   </mat-card-header>
-
-  <mat-card-content fxLayoutAlign="center center" >
+  <div  class="indice-pollution mat-elevation-z24"  >
+    <h2>INDICE QUALITÉ D'AIR</h2>
+    <div style="font-size: 4em;padding-left: 35%" >{{city.pollution.data.aqi}}</div>
+    <div style="margin: auto" >{{city.pollution.data.aqiDescription}}</div>
+  </div>
+  <mat-card-content>
     <ul>
-      <li><span class="value">NO2: </span> <span class="value">{{city.pollution.data.iaqi.no2.v}}</span></li>
+      <li fxlayoutAlign="space-between"><span class="value">NO2: </span> <span
+        class="value">{{city.pollution.data.iaqi.no2.v}}</span></li>
       <mat-divider></mat-divider>
-      <li><span class="value">DEW :</span> <span class="value">{{city.pollution.data.iaqi.dew.v}}</span></li>
+      <li><span class="value">Wg :</span> <span class="value">{{city.pollution.data.iaqi.wg.v}}</span></li>
       <mat-divider></mat-divider>
       <li><span class="value">PM10: </span><span class="value">{{city.pollution.data.iaqi.pm10.v}}</span></li>
+      <mat-divider></mat-divider>
+      <li><span class="value">H: </span><span class="value">{{city.pollution.data.iaqi.h.v}}</span></li>
 
     </ul>
 
