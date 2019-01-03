@@ -46,6 +46,7 @@ import {MatInputModule} from '@angular/material/input';
     MatTabsModule,
     MatFormFieldModule,
     MatInputModule,
+
   ]
 
 })

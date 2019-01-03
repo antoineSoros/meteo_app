@@ -15,10 +15,11 @@ import {MatSnackBar} from '@angular/material';
 })
 export class MeteoComponent implements OnInit, OnChanges {
   @Input() city: City;
-  @Input()meteo: Meteo;
-  @Output()eventCity: EventEmitter<City>;
+  @Input() meteo: Meteo;
+  @Output() eventCity: EventEmitter<City>;
+
   constructor(private meteoService: MeteoService, private snackbar: MatSnackBar) {
-  this.meteo = new Meteo();
+
   }
 
   ngOnInit() {
@@ -27,22 +28,22 @@ export class MeteoComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
 
-      this.findMeteo();
+    this.findMeteo();
 
   }
- findMeteo(): Subscription {
-   return this.meteoService.get(this.city).subscribe((meteoModel: Meteo) => {
-      this.city.weather = meteoModel;
 
-     },
-     (error: HttpErrorResponse) => {
-       this.snackbar.open(' can\'t load meteo', 'OOPS', {duration: 3000}
-       );
-     }
-   );
- }
+  findMeteo(): Subscription {
+    return this.meteoService.get(this.city).subscribe((meteoModel: Meteo) => {
+        this.city.weather = meteoModel;
 
-
-
+      },
+      (error: HttpErrorResponse) => {
+        this.snackbar.open(' can\'t load meteo', 'OOPS', {duration: 3000}
+        );
+      }
+    );
   }
+
+
+}
 

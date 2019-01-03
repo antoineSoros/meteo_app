@@ -5,6 +5,7 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import {Subscription} from 'rxjs';
 import {LocationIQ} from '../shared/models/location-iq.models';
 import {HttpErrorResponse} from '@angular/common/http';
+import {CitiesService} from '../shared/services/cities.service';
 
 @Component({
   selector: 'mp-city',
@@ -17,7 +18,7 @@ export class CityComponent implements OnInit {
 @Input() city: City;
 @Output() eventCity: EventEmitter<City>;
 
-  constructor(private locationIQService: LocationIqService, private snackbar: MatSnackBar) {
+  constructor(private locationIQService: LocationIqService, private snackbar: MatSnackBar, citiesService: CitiesService) {
     this.findLocation();
    this.eventCity = new EventEmitter();
    }
@@ -29,6 +30,7 @@ export class CityComponent implements OnInit {
       (event: Position) => {
         this.city.position = event ;
       this.findCityName();
+      this.eventCity.emit(this.city);
       },
       () => {
         return this.snackbar.open('VILLE INTROUVABLE!!!', 'Retry'

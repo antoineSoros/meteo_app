@@ -9,8 +9,8 @@
     <mat-sidenav-content>
 
       <mat-toolbar  fxLayout="row"   color="primary"  >
-        <p><button mat-icon-button (click)="sidenav.toggle()" ><mat-icon>menu</mat-icon></button></p>
-        <mat-toolbar-row fxLayoutAlign="space-around center" >
+        <mat-toolbar-row><button mat-icon-button (click)="sidenav.toggle()" ><mat-icon>menu</mat-icon></button></mat-toolbar-row>
+        <mat-toolbar-row fxLayoutAlign=" space-around center" class="city">
          <mp-city (eventCity)="addCity($event)" [city]="city" ></mp-city>
         </mat-toolbar-row>
 

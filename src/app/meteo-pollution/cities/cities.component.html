@@ -3,5 +3,6 @@
     <input #inputCity (blur)="onSubmit($event)" matInput placeholder="Enter a city" formControlName="cityName">
     <mat-error *ngIf="cityForm.get('cityName').errors && cityForm.get('cityName').errors.minlength ">Too Short</mat-error>
     <mat-error *ngIf="cityForm.get('cityName').errors && cityForm.get('cityName').errors.maxlength">Too Long</mat-error>
+  <a mat-list-item *ngFor="let city of cities">{{city.address.county}}</a>
   </mat-form-field>
 </form>
