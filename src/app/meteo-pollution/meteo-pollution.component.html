@@ -13,6 +13,7 @@
         <mat-toolbar-row fxLayoutAlign=" space-around center" class="city">
          <mp-city (eventCity)="setCity($event)" [city]="city"></mp-city>
         </mat-toolbar-row>
+        <mat-toolbar-row fxLayoutAlign=" end "><button mat-icon-button [routerLink]="['/setting']"><mat-icon>settings</mat-icon></button></mat-toolbar-row>
 
 
       </mat-toolbar>
