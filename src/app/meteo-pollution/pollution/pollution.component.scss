@@ -28,7 +28,59 @@ ul{
 
 
 .indice-pollution{
-  padding:  5%;
+  width: 300px;
+  height: 200px;
+  margin: auto;
   border-radius: 12px;
 
+}
+.bon{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #009966;
+
+}
+.moyen{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #FFDE33;
+}
+.sensible{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #CC0033;
+}
+.dangeureux{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #CC0033;
+}
+.tresdangeureux{
+  background-color: #660099;
+}
+.hazardous{
+  width: 300px;
+  height: 200px;
+  margin: auto;
+  border-radius: 12px;
+  background-color: #7E0023;
+}
+mat-divider{
+  margin-top: 15%;
+}
+h2{
+  margin-top: 10%;
+  margin-left: 15%;
+}
+p{
+  margin-top: 10%;
+  font-size: 1.3em;
 }

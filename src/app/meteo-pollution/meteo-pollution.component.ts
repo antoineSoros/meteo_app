@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {City} from './shared/models/city.model';
+import {CitiesService} from "./shared/services/cities.service";
 
 
 @Component({
@@ -10,13 +11,13 @@ import {City} from './shared/models/city.model';
 export class MeteoPollutionComponent  {
  public city: City;
 
-  constructor() {
+  constructor(private citiesService: CitiesService) {
 this.city = new City();
 
   }
 
 addCity(city: City) {
-console.log('wait');
+this.citiesService.post(city);
 }
 
 }

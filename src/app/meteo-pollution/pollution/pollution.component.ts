@@ -32,29 +32,29 @@ export class PollutionComponent implements OnInit, OnChanges {
         this.city.pollution = pollutionModel;
         if (this.city.pollution.data.aqi < 51) {
           this.city.pollution.data.aqiDescription = 'BON';
-          this.city.pollution.data.aqiColor = '#009966';
+          this.city.pollution.data.aqiColor = 'bon';
         }
         if (this.city.pollution.data.aqi > 50 && this.city.pollution.data.aqi < 101) {
           this.city.pollution.data.aqiDescription = 'MODÉRÉ';
-          this.city.pollution.data.aqiColor = '#FFDE33';
+          this.city.pollution.data.aqiColor = 'moyen';
         }
         if (this.city.pollution.data.aqi > 100 && this.city.pollution.data.aqi < 151) {
           this.city.pollution.data.aqiDescription = 'RISQUE POUR SANTÉ FRAGILE';
-          this.city.pollution.data.aqiColor = '#FF9933';
+          this.city.pollution.data.aqiColor = 'sensible';
         }
         if (this.city.pollution.data.aqi > 150 && this.city.pollution.data.aqi < 201) {
           this.city.pollution.data.aqiDescription = 'RISQUE POUR LA SANTÉ ';
-          this.city.pollution.data.aqiColor = '#CC0033';
+          this.city.pollution.data.aqiColor = 'dangeureux';
         }
 
         if (this.city.pollution.data.aqi > 200 && this.city.pollution.data.aqi < 301) {
           this.city.pollution.data.aqiDescription = ' DANGEREUX POUR LA SANTÉ ';
-          this.city.pollution.data.aqiColor = '#660099';
+          this.city.pollution.data.aqiColor = 'tresdangeureux';
 
         }
         if (this.city.pollution.data.aqi > 300) {
-          this.city.pollution.data.aqiDescription = 'DANGEREUX POUR LA SANTÉ';
-          this.city.pollution.data.aqiColor = '#7E0023';
+          this.city.pollution.data.aqiDescription = 'TRÈS DANGEREUX POUR LA SANTÉ';
+          this.city.pollution.data.aqiColor = 'hazardous';
         }
       },
       (error: HttpErrorResponse) => {
