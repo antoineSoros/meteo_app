@@ -6,6 +6,7 @@ import {Subscription} from 'rxjs';
 import {LocationIQ} from '../shared/models/location-iq.models';
 import {HttpErrorResponse} from '@angular/common/http';
 import {CitiesService} from '../shared/services/cities.service';
+import {Address} from '../shared/models/address.model';
 
 @Component({
   selector: 'mp-city',
@@ -25,27 +26,26 @@ export class CityComponent implements OnInit {
 
   ngOnInit() { }
 
-  findLocation() {
-    navigator.geolocation.getCurrentPosition(
-      (event: Position) => {
-        this.city.position = event ;
-      this.findCityName();
-      this.eventCity.emit(this.city);
-      },
-      () => {
-        return this.snackbar.open('VILLE INTROUVABLE!!!', 'Retry'
-        ).onAction().subscribe(() => this.findLocation());
-      });
+  findLocation(): void {
+    return navigator.geolocation.getCurrentPosition(
+      (event: Position) => this.findCityName(event),
+      (event: PositionError) => this.snackbar.open('Geolocation Failed', 'Retry'
+      ).onAction().subscribe(() => this.findLocation()));
+
+
 
   }
-  findCityName(): Subscription {
-    return this.locationIQService.get(this.city.position).subscribe(
+  findCityName(position: Position): Subscription {
+    return this.locationIQService.get(position).subscribe(
       (locationIq: LocationIQ) => {
-        this.city.address = locationIq.address;
-        this.eventCity.emit(this.city);
+       const city = new City;
+       city.position = position;
+       city.address = new Address;
+       city.address = locationIq.address;
+        this.eventCity.emit(city);
       },
       (error: HttpErrorResponse) => {this.snackbar.open('City Location Error', 'Retry'
-      ).onAction().subscribe(() => this.findCityName()); }
+      ).onAction().subscribe(() => this.findCityName(position)); }
     );
 
 

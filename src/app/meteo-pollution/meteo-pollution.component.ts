@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {City} from './shared/models/city.model';
-import {CitiesService} from "./shared/services/cities.service";
+import {CitiesService} from './shared/services/cities.service';
 
 
 @Component({
@@ -8,16 +8,24 @@ import {CitiesService} from "./shared/services/cities.service";
   templateUrl: './meteo-pollution.component.html',
   styleUrls: ['./meteo-pollution.component.scss']
 })
-export class MeteoPollutionComponent  {
- public city: City;
+export class MeteoPollutionComponent {
+  public city: City;
 
   constructor(private citiesService: CitiesService) {
-this.city = new City();
+
 
   }
 
-addCity(city: City) {
-this.citiesService.post(city);
-}
+
+
+
+  setCity(city: City) {
+    this.city = city;
+    this.citiesService.post(city);
+    console.log(this.city);
+  }
+  addCity(city: City){
+    this.citiesService.post(city);
+  }
 
 }

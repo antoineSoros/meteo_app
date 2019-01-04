@@ -1,3 +1,4 @@
+<!--<div *ngIf="city && city.address;">-->
 <form [formGroup]="cityForm" (ngSubmit)="inputCity.blur()">
   <mat-form-field>
     <input #inputCity (blur)="onSubmit($event)" matInput placeholder="Enter a city" formControlName="cityName">
@@ -9,3 +10,4 @@
 
 </form>
 <mat-list-item mat-list-item *ngFor="let city of cities">{{city.address.county}}</mat-list-item>
+<!--</div>-->

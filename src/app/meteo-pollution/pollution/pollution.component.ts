@@ -18,6 +18,7 @@ export class PollutionComponent implements OnInit, OnChanges {
 
   constructor(private pollutionService: PollutionService, private snackbar: MatSnackBar) {
     this.pollution = new Pollution();
+    this.eventCity = new EventEmitter();
   }
 
   ngOnInit() {

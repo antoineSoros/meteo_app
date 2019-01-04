@@ -1,5 +1,5 @@
 
-
+<div *ngIf="city && city.address;">
 <mat-card fxLayout="column" fxLayoutAlign="start center" class="mat-elevation-z24">
   <mat-card-header >
     <mat-card-title ><span class="title">MÉTÉO</span></mat-card-title>
@@ -8,7 +8,7 @@
 
   <mat-card-content>
 <mat-tab-group>
-  <mat-tab  label="description" fxlayoutAlign="center"><span class="value" >{{city.weather.weather[0].description}}</span></mat-tab>
+  <mat-tab class="{{city.weather.class}}" label="description" fxlayoutAlign="center"><span class="value" >{{city.weather.weather[0].description}}</span></mat-tab>
   <mat-tab label="Temperature">
     <ul>
       <li><span class="value">Temperature:</span> <span class="value" fxLayoutAlign="end ">{{city.weather.main.temp |number:'1.0-0'}} °C</span></li>
@@ -26,3 +26,4 @@
 </mat-tab-group>
   </mat-card-content>
 </mat-card>
+</div>

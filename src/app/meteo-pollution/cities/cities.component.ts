@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {City} from '../shared/models/city.model';
 import {Address} from '../shared/models/address.model';
@@ -10,12 +10,15 @@ import {CitiesService} from '../shared/services/cities.service';
   styleUrls: ['./cities.component.scss']
 })
 export class CitiesComponent implements OnInit {
+  @Input() city: City;
+  @Output() eventCity: EventEmitter<City>;
   public cityForm: FormGroup;
   public cities: City[];
 
   constructor(private formBuilder: FormBuilder, private citiesService: CitiesService) {
     this.cityForm = this.createCityForm();
     this.citiesService.get().subscribe((cities: City[]) => this.cities = cities );
+    this.eventCity = new EventEmitter();
 
   }
 
@@ -34,12 +37,13 @@ export class CitiesComponent implements OnInit {
   onSubmit(event: MSInputMethodContext) {
     const input = event.target;
     const cityName: AbstractControl = this.cityForm.get('cityName');
-    if (cityName.valid) {
+    if (cityName.valid && cityName.value) {
       const city: City = new City();
       city.address = new Address();
       city.address.county = cityName.value;
       this.citiesService.get().subscribe();
       this.citiesService.post(city);
+      this.eventCity.emit(city);
       cityName.setValue('');
     }
 
