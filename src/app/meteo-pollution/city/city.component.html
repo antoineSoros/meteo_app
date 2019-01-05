@@ -3,5 +3,5 @@
 
 <ng-template #search><mat-icon *ngIf="!city.address;else cityname">location_on</mat-icon></ng-template>
 
-<ng-template #cityname ><h1 style="font-size: 3.5em">{{city.address.county}}</h1> </ng-template>
+<ng-template #cityname ><h1 style="font-size: 3.5em; margin-right: 10%">{{city.address.county | titlecase}}</h1> </ng-template>
 
