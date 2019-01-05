@@ -1,43 +1,80 @@
-mat-card {
+.meteo {
   width: 500px;
   height: 500px;
 
-}
-mat-card-header{
 
-  align-content: center;
+  border-radius: 12px;
+
 }
 
-.value{
+
+
+.value {
   font-weight: bolder;
   font-size: 2em;
 }
-.title{
+
+.title {
   font-size: 2em;
 
 }
-mat-card-subtitle{
-  margin-left: 15%;
+
+
+
+
+li {
+  list-style-type: none;
 }
-li{
-  list-style-type:none;
+
+.sun {
+  height: 250px;
+  width: 500px;
+  border-radius: 12px;
+  background-image: url("/assets/sun.png");
+  background-size: cover;
 }
-.sun{
-  background-image: url("//assets/sun.png");
+
+.snow {
+  height: 250px;
+  width: 500px;
+
+  background-image: url("/assets/snow.jpg");
+  background-size: cover;
+  border-radius: 12px;
 }
-.snow{
-  background-image: url("/meteo-pollution/src/assets/snow.jpg");
+
+.rain {
+  height: 250px;
+  width: 500px;
+
+  background-image: url("/assets/rain.jpg");
+  background-size: cover;
+  border-radius: 12px;
 }
-.rain{
-  background-image: url("/meteo-pollution/src/assets/rain.jpg");
+
+.thunder {
+  height: 250px;
+  width: 500px;
+
+  background-image: url("//assets/thunder.jpg");
+  background-size: cover;
+  border-radius: 12px;
 }
-.thunder{
-  background-image: url("/meteo-pollution/src/assets/thunder.jpg");
+
+.fog {
+  height: 250px;
+  width: 500px;
+  background-image: url("/assets/fog.jpg");
+  background-size: cover;
+  border-radius: 12px;
 }
-.fog{
-  background-image: url("/meteo-pollution/src/assets/fog.jpg");
-}
-.cloud{
-  background-image: url("/meteo-pollution/src/assets/cloud.jpg");
+
+.cloud {
+  height: 250px;
+  width: 500px;
+  background-image: url('/assets/cloud.jpg');
+  background-size: cover;
+  border-radius: 12px;
+
 }
 

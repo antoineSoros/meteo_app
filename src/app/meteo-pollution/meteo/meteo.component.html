@@ -1,14 +1,14 @@
 
 <div *ngIf="city && city.address;" >
-<mat-card fxLayout="column" fxLayoutAlign="start center" class="mat-elevation-z24">
-  <mat-card-header >
-    <mat-card-title ><span class="title">MÉTÉO</span></mat-card-title>
-  <mat-card-subtitle fxLayoutAlign="center center" ><img  src="http://openweathermap.org/img/w/{{city.weather.weather[0].icon}}.png"></mat-card-subtitle>
-  </mat-card-header>
+<div fxLayout="column" fxLayoutAlign="start center" class="meteo mat-elevation-z24">
 
-  <mat-card-content>
+    <h2 ><span class="title">MÉTÉO</span></h2>
+  <div fxLayoutAlign="center center" ><img  src="http://openweathermap.org/img/w/{{city.weather.weather[0].icon}}.png"></div>
+
+
+  <div>
 <mat-tab-group >
-  <mat-tab  label="description" fxlayoutAlign="center"><span class="value" >{{city.weather.weather[0].description}}</span></mat-tab>
+  <mat-tab  label="description" fxlayoutAlign="center"  ><span class="value" >{{city.weather.weather[0].description}}</span><div class="{{city.weather.class}}"></div></mat-tab>
   <mat-tab label="Temperature">
     <ul>
       <li><span class="value">Temperature:</span> <span class="value" fxLayoutAlign="end ">{{city.weather.main.temp |number:'1.0-0'}} °C</span></li>
@@ -24,6 +24,6 @@
     <span  fxLayoutAlign="none " class="value"> wind speed:</span> <span class="value" fxLayoutAlign="end center">{{city.weather.wind.speed }} m/s</span></mat-tab>
 
 </mat-tab-group>
-  </mat-card-content>
-</mat-card>
+  </div>
+</div>
 </div>
