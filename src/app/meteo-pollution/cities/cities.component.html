@@ -1,7 +1,8 @@
 <!--<div *ngIf="city && city.address;">-->
 <form [formGroup]="cityForm" (ngSubmit)="inputCity.blur()">
   <mat-form-field>
-    <input #inputCity (blur)="onSubmit($event)" matInput placeholder="Enter a city" formControlName="cityName">
+    <input #inputCity (blur)="onSubmit($event)" matInput placeholder="Enter a city"  formControlName="cityName" style="padding-top: 15%">
+    <mat-hint align="end">{{inputCity.value?.length || 0}}/32</mat-hint>
     <mat-error *ngIf="cityForm.get('cityName').errors && cityForm.get('cityName').errors.minlength ">Too Short</mat-error>
     <mat-error *ngIf="cityForm.get('cityName').errors && cityForm.get('cityName').errors.maxlength">Too Long</mat-error>
 

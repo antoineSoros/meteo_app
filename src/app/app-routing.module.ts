@@ -5,8 +5,8 @@ import {SettingComponent} from './setting/setting.component';
 import {MeteoPollutionComponent} from './meteo-pollution/meteo-pollution.component';
 
 const routes: Routes = [
-  {path: 'setting', component: SettingComponent},
   {path: 'meteo', component: MeteoPollutionComponent},
+  {path: 'setting', component: SettingComponent},
   {path: '**', redirectTo: 'setting'}
 ];
 
@@ -20,4 +20,5 @@ const routes: Routes = [
     RouterModule,
   ]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
