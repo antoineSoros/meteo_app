@@ -1,5 +1,5 @@
 
-<div *ngIf="city && city.address;" >
+<div *ngIf="city && city.address; else spinner" >
 <div fxLayout="column" fxLayoutAlign="start center" class="meteo mat-elevation-z24">
 
     <h2 ><span class="title">MÉTÉO</span></h2>
@@ -27,3 +27,4 @@
   </div>
 </div>
 </div>
+<ng-template #spinner><mat-spinner diameter="200"  strokeWidth="3"></mat-spinner></ng-template>
