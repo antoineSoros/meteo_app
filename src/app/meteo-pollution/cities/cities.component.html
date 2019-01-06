@@ -10,5 +10,8 @@
   </mat-form-field>
 
 </form>
-<mat-list-item mat-list-item *ngFor="let city of cities">{{city.address.county | titlecase}}</mat-list-item>
+<mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical">
+  <mat-chip  *ngFor="let city of cities" class="mat-elevation-z24" >{{city.address.county | titlecase}}<button mat-icon-button (click)="removeFromList(city)"><mat-icon >cancel</mat-icon> </button>
+</mat-chip>
+</mat-chip-list>
 <!--</div>-->

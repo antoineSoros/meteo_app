@@ -48,5 +48,10 @@ export class CitiesComponent implements OnInit {
     }
 
   }
-
+removeFromList(city: City): void {
+const index = this.cities.indexOf(city);
+if (index >= 0) {
+  this.cities.splice(index, 1);
+}
+}
 }
