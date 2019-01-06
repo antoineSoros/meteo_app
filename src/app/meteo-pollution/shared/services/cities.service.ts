@@ -1,15 +1,18 @@
 import {Injectable} from '@angular/core';
 import {City} from '../models/city.model';
 import {Observable, of} from 'rxjs';
+import {LocationIqService} from './location-iq.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CitiesService {
   public cities: City[];
+  public reelCity: boolean;
 
-  constructor() {
+  constructor(private locationIqService: LocationIqService) {
     this.cities = [];
+
   }
 
   get(): Observable<City[]> {
@@ -19,7 +22,8 @@ export class CitiesService {
 
   post(city: City): Observable<City[]> {
     const foundCity = this.cities.find((current) => current.address.county === city.address.county);
-    if (!foundCity) {
+
+    if (!foundCity ) {
       this.cities.push(city);
     }
     return this.get();
