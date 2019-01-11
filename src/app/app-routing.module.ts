@@ -1,8 +1,9 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
-import {SettingComponent} from './setting/setting.component';
 import {MeteoPollutionComponent} from './meteo-pollution/meteo-pollution.component';
+import {SettingComponent} from './setting/setting.component';
+
 
 const routes: Routes = [
   {path: 'meteo', component: MeteoPollutionComponent},

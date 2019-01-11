@@ -17,7 +17,7 @@ export class CitiesComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, private citiesService: CitiesService) {
     this.cityForm = this.createCityForm();
-    this.citiesService.get().subscribe((cities: City[]) => this.cities = cities );
+    this.citiesService.get().subscribe((cities: City[]) => this.cities = cities);
     this.eventCity = new EventEmitter();
 
   }
@@ -37,6 +37,7 @@ export class CitiesComponent implements OnInit {
   onSubmit(event: MSInputMethodContext) {
     const input = event.target;
     const cityName: AbstractControl = this.cityForm.get('cityName');
+
     if (cityName.valid && cityName.value) {
       const city: City = new City();
       city.address = new Address();
@@ -48,10 +49,21 @@ export class CitiesComponent implements OnInit {
     }
 
   }
-removeFromList(city: City): void {
-const index = this.cities.indexOf(city);
-if (index >= 0) {
-  this.cities.splice(index, 1);
-}
-}
+
+  removeFromList(city: City): void {
+    const index = this.cities.indexOf(city);
+    if (index >= 0) {
+      this.cities.splice(index, 1);
+    }
+  }
+
+  setCity(city: City): void {
+    const index = this.cities.indexOf(city);
+    if (index >= 0) {
+      this.citiesService.get().subscribe();
+      this.citiesService.post(city);
+      this.eventCity.emit(city);
+    }
+
+  }
 }
