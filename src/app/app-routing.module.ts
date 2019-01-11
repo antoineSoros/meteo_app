@@ -6,6 +6,8 @@ import {SettingComponent} from './setting/setting.component';
 
 
 const routes: Routes = [
+
+  {path: '', component: MeteoPollutionComponent},
   {path: 'meteo', component: MeteoPollutionComponent},
   {path: 'setting', component: SettingComponent},
   {path: '**', redirectTo: 'setting'}

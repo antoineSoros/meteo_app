@@ -20,6 +20,7 @@ import {SettingComponent} from './setting/setting.component';
 
   ],
   exports: [
+
     SettingComponent
 
   ],
