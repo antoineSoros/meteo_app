@@ -11,7 +11,7 @@
 
 </form>
 <mat-chip-list class="mat-chip-list-stacked" aria-orientation="vertical" >
-  <mat-chip  *ngFor="let city of cities" class="mat-elevation-z24" (click)="setCity(city)" >{{city.address.county | titlecase}}<button mat-icon-button (click)="removeFromList(city)"><mat-icon >cancel</mat-icon> </button>
+  <mat-chip  *ngFor="let city of cities" class="mat-elevation-z24" (click)="setCity(city)" >{{city.address.county | titlecase}}<img  src="http://openweathermap.org/img/w/{{city.weather.weather[0].icon}}.png"><button mat-icon-button (click)="removeFromList(city)"><mat-icon >cancel</mat-icon> </button>
 </mat-chip>
 </mat-chip-list>
 <!--</div>-->

@@ -17,18 +17,20 @@ export class CitiesService {
   }
 
   get(): Observable<City[]> {
-     return of(this.cities);
+    return of(this.cities);
 
 
   }
 
   post(city: City): Observable<City[]> {
     const foundCity = this.cities.find((current) => current.address.county === city.address.county);
-    if (!foundCity ) {
-      this.cities.push(city);
-      this.localStorage.setItemSubscribe('cities', city.address.county);
+    if (!foundCity) {
+
+        this.cities.push(city);
+        this.localStorage.setItemSubscribe('cities', city.address.county);
+      }
+      return this.get();
     }
-    return this.get();
+
   }
 
-}
